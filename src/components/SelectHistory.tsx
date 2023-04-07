@@ -1,9 +1,14 @@
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { getSelectedPokemon } from "../redux/pokemonSlice";
 import { Pokemon } from "../types/pokemon.types";
-import ListadoPokemonsItem from "./ListadoPokemonsItem";
+import ListItem from "./ListItem";
 
-export const HistorialPokemon = () => {
+/**
+ * Renders a list of previously selected Pokemon.
+ *
+ * @return {JSX.Element} JSX Element that represents the list of previously selected Pokemon.
+ */
+export const SelectHistory = () => {
     const dispatch = useAppDispatch()
     const historial = useAppSelector(state => state.pokemon.historial)
 
@@ -12,7 +17,7 @@ export const HistorialPokemon = () => {
             <h3>Pokemons visitados:</h3>
 
             {historial && historial.map((pokemon: Pokemon, i) => (
-                <ListadoPokemonsItem pokemon={pokemon}
+                <ListItem pokemon={pokemon}
                     seleccionarPokemon={() => dispatch(getSelectedPokemon(pokemon.url))}
                     key={i} />
             ))}

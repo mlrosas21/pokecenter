@@ -1,7 +1,7 @@
 import "./styles.css";
-import BuscarPokemon from "./components/BuscarPokemon";
-import { HistorialPokemon } from "./components/HistorialPokemon";
-import { HistorialBuscados } from "./components/HistorialBuscados";
+import Search from "./components/Search";
+import { SelectHistory } from "./components/SelectHistory";
+import { SearchHistory } from "./components/SearchHistory";
 
 export default function App() {
 
@@ -10,9 +10,9 @@ export default function App() {
             <h1>Pokédex</h1>
             <div id="bandejaDeEntrada">
                 <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                    <BuscarPokemon />
-                    <HistorialPokemon />
-                    <HistorialBuscados />
+                    <Search />
+                    <SelectHistory />
+                    <SearchHistory />
                 </div>
             </div>
         </div>

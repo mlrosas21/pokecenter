@@ -8,7 +8,7 @@ const apiPokemon = async (name: string) => {
         const data = await response.json();
         return data.results.filter((pokemon: Pokemon) => pokemon.name.toLowerCase().startsWith(name.toLowerCase()))
     } else {
-        throw new Error('Pagina no encontrada')
+        throw new Error('Page not found')
     }
 }
 
